@@ -1,0 +1,9 @@
+<div>
+    <ul>
+        <li *ngFor="let item of locationsList" [routerLink]="['/locations',item.id]">
+            <h3>{{item.name | uppercase}}</h3>
+            <p>{{item.type}}</p>
+            <p>{{item.dimension}}</p>
+        </li>
+    </ul>
+</div>
