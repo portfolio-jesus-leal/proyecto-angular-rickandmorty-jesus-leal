@@ -1,6 +1,8 @@
 @import "fonts";
 @import "variables";
+@import "responsive";
 @import "animations";
+@import "mixins";
 
 .pag {
   font-family: $font-family;
@@ -20,6 +22,10 @@
         animation                : shake 0.5s;
         animation-iteration-count: infinite;        
     }
+  }
+
+  &__btn {
+    @include btn-custom;
   }
 
   &__prev {

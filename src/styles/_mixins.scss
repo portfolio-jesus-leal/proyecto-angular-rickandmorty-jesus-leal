@@ -1,0 +1,34 @@
+// Custom Properties CSS
+// Mixin components definition
+@mixin btn-custom {
+    align-items: center;
+    background-color: $btn-background-color;
+    border-radius: $btn-border-radius;
+    border: 1px solid black;
+    box-shadow: 0.2rem 0.2rem 0.2rem $shadow-color;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0.8rem;
+    transition-duration: 0.3s;
+    margin: 0 0.5rem;
+  
+    & > p {
+      margin-block: 0;
+    }
+  
+    &:hover {
+      transform: scale(110%);
+    }
+  
+    &:active {
+      transform: scale(90%);
+    }
+  
+    @include mobile {
+      box-shadow: 0.1rem 0.1rem 0.1rem 0 black;
+      padding: 0.5rem;
+    }
+  }

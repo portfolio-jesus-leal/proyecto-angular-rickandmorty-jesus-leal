@@ -1,0 +1,55 @@
+@import "fonts";
+@import "variables";
+//@import "responsive";
+//@import "animations";
+//@import "mixins";
+
+// Custom Properties CSS
+.filter {
+  background-color: $background-color;
+  font-family: $font-family;
+  padding: 1rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1rem;
+    width: 95%;
+    margin: auto;
+    background-color: $filter-background-color;
+    border-radius: $border-radius;
+  }
+
+  &__input {
+    font-family: $font-family;
+    border-radius: $border-radius;
+    width: 30%;
+    padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  &__label {
+    font-weight: bold;
+    width: 15%;
+  }
+
+  &__search,
+  &__status,
+  &__gender {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+
+    & > p {
+      margin: 0.2rem 0.8rem 0 0;
+    }
+  }
+
+  &__option {
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

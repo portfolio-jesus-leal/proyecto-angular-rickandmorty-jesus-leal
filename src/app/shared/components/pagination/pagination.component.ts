@@ -20,7 +20,6 @@ export class PaginationComponent implements OnInit {
 
   ngOnChanges(): void {
     console.log('ngOnChanges - info ->', this.info);
-    debugger;
  
     if (this.info) {
 
