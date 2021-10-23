@@ -1,0 +1,31 @@
+@import "fonts";
+@import "variables";
+@import "animations";
+
+.pag {
+  font-family: $font-family;
+  background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > p {
+    font-weight: bold;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 15vw;
+    text-align: center;
+    
+    &:hover {
+        animation                : shake 0.5s;
+        animation-iteration-count: infinite;        
+    }
+  }
+
+  &__prev {
+    width: 100px;
+  }
+  &__next {
+    width: 100px;
+  }
+}

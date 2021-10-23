@@ -1,0 +1,10 @@
+<div>
+    <ul>
+        <li *ngFor="let item of episodesList" [routerLink]="['/episodes',item.id]">
+            <h3>{{item.episode}}&nbsp;{{item.name | uppercase}}</h3>
+            <p>{{item.air_date}}</p>
+            <p>{{item.created}}</p>
+        </li>
+    </ul>
+</div>
+

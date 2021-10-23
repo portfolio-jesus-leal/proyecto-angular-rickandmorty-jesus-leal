@@ -1,1 +1,2 @@
-<p>characters works!</p>
+<app-characters-gallery [characters] = "characters"></app-characters-gallery>
+<app-pagination [info]="characters.info" (pageChanged)="pageChanged($event)"></app-pagination>

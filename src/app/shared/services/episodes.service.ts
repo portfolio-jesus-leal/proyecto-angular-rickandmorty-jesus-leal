@@ -9,11 +9,11 @@ export class EpisodesService {
 
   constructor(private http:HttpClient) { }
 
-  getLocations():Observable<any> {
+  getEpisodes():Observable<any> {
     return this.http.get(`https://rickandmortyapi.com/api/episode`);
   }
 
-  getLocationById(id:any):Observable<any> {
+  getEpisodeById(id:any):Observable<any> {
     return this.http.get(`https://rickandmortyapi.com/api/episode/${id}`);
   }
 }

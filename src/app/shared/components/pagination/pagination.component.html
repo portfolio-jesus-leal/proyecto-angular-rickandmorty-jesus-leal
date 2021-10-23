@@ -1,0 +1,7 @@
+<section>
+    <div class="pag" *ngIf="info">
+        <div class="btn pag__prev" (click)="prevPage()">&#10094; Anterior</div>
+        <p><strong>Página:&nbsp;</strong>{{currentPage}}&nbsp;/&nbsp;{{info.pages}}</p>
+        <div class="btn pag__next" (click)="nextPage()">Siguiente &#10095;</div>
+    </div>
+</section>

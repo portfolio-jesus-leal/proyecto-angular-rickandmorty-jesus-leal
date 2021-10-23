@@ -1,0 +1,24 @@
+<section>
+    <ng-container *ngIf="details.image">
+        <img class="char__img" src="{{details.image}}" alt="{{details.name}}">
+        <p>{{details.image}}</p>
+        <div class="char__name">{{details.name}}</div>
+        <div class="char__row2">
+            <span>{{details.status}}</span>
+            <span> - </span>
+            <span>{{details.species}}</span>
+        </div>
+        <div class="char__row3">
+            <span>Origen: </span>
+            <span>{{details.origin.name}}</span>
+        </div>
+        <div class="char__row4">
+            <span>Ubicación: </span>
+            <span>{{details.location.name}}</span>
+        </div>
+        <div class="char__row5">
+            <span>Primer episodio: </span>
+            <span>{{details.episode[0]}}</span>
+        </div>
+    </ng-container>
+</section>
