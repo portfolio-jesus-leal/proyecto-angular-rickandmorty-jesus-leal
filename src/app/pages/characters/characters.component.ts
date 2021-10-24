@@ -14,17 +14,17 @@ export class CharactersComponent implements OnInit {
   constructor(private charactersService:CharactersService) { }
 
   ngOnInit(): void {
-    this.getCharacterInfo(this.page);
+    this.getCharactersInfo(this.page);
   }
 
   pageChanged(pageNumber: any) {
     this.page = pageNumber;
 
     console.log('Characters page ->', this.page);
-    this.getCharacterInfo(this.page);
+    this.getCharactersInfo(this.page);
   }
   
-  getCharacterInfo(page: number) {
+  getCharactersInfo(page: number) {
     this.charactersService.getCharacters(page).subscribe(characters => this.characters = characters);
   }
 }

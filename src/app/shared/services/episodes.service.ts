@@ -9,8 +9,9 @@ export class EpisodesService {
 
   constructor(private http:HttpClient) { }
 
-  getEpisodes():Observable<any> {
-    return this.http.get(`https://rickandmortyapi.com/api/episode`);
+  getEpisodes(page:number=1):Observable<any> {
+    console.log('getEpisodes->', page);
+    return this.http.get(`https://rickandmortyapi.com/api/episode?page=${page}`);
   }
 
   getEpisodeById(id:any):Observable<any> {

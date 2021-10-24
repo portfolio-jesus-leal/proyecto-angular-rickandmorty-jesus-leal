@@ -1,0 +1,35 @@
+@import "fonts";
+//@import "variables";
+//@import "responsive";
+//@import "animations";
+//@import "mixins";
+
+.char {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-family;
+  width: 96%;
+  margin: 1rem auto;
+
+  &__img-container {
+    overflow: hidden;
+  }
+  
+  &__img {
+    width: 100%;
+    border: 1px solid lightgray;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.20);
+    }
+  }
+
+  &__name {
+    font-size: medium;
+    font-weight: bold;
+    margin: 0.7rem auto;
+  }
+}

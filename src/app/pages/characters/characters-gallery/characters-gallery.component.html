@@ -1,10 +1,9 @@
 <div class="gallery__container">
     <ng-container *ngIf="characters.results">
-    <div class="gallery__card" *ngFor="let item of characters.results">
-        <a routerLink='/characters/{{item.id}}'>
-            <!-- <app-character [character]="item"></app-character> -->
-            <p>item</p>
-        </a>
-    </div>
-</ng-container>
+        <div class="gallery__card" *ngFor="let item of characters.results">
+            <a routerLink='/characters/{{item.id}}'>
+                <app-character-card [character]="item"></app-character-card>
+            </a>
+        </div>
+    </ng-container>
 </div>

@@ -8,25 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EpisodesComponent implements OnInit {
 
-  episodesList:any = [];
-  info:any = {};
+  private page:number = 1;
+  public episodesList:any = [];
+  public info:any = {};
 
   constructor(private episodeService:EpisodesService) { }
 
   ngOnInit(): void {
-    this.episodeService.getEpisodes().subscribe(episodes => {
+    this.getEpisodesInfo(this.page);
+  }
+  
+  pageChanged(pageNumber: any) {
+    this.page = Number(pageNumber);
+    this.getEpisodesInfo(this.page);
+    console.log('Episodes page ->', this.page);
+    //this.getCharacterInfo(this.page);
+  }
+  
+  getEpisodesInfo(page: number) {
+    this.episodeService.getEpisodes(this.page).subscribe(episodes => {
       this.episodesList = episodes.results;
       this.info = episodes.info;
       console.log('Episodes ->', this.episodesList);
       console.log('Info ->', this.info);
-    })
+    });
   }
-
-  pageChanged(pageNumber: any) {
-    //this.page = pageNumber;
-
-    console.log('Episodes page ->', pageNumber);
-    //this.getCharacterInfo(this.page);
-  }
-
+  
 }
