@@ -22,4 +22,11 @@ export class EpisodesComponent implements OnInit {
     })
   }
 
+  pageChanged(pageNumber: any) {
+    //this.page = pageNumber;
+
+    console.log('Episodes page ->', pageNumber);
+    //this.getCharacterInfo(this.page);
+  }
+
 }

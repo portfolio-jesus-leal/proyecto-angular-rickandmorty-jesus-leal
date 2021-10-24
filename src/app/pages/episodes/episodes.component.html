@@ -1,1 +1,2 @@
 <app-episodes-gallery [episodesList]='episodesList' [info]='info'></app-episodes-gallery>
+<app-pagination [info]="info" (pageChanged)="pageChanged($event)"></app-pagination>

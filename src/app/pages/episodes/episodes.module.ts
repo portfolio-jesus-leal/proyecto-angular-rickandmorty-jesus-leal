@@ -5,6 +5,7 @@ import { EpisodesRoutingModule } from './episodes-routing.module';
 import { EpisodesComponent } from './episodes.component';
 import { EpisodeDetailsComponent } from './episode-details/episode-details.component';
 import { EpisodesGalleryComponent } from './episodes-gallery/episodes-gallery.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { EpisodesGalleryComponent } from './episodes-gallery/episodes-gallery.co
   ],
   imports: [
     CommonModule,
-    EpisodesRoutingModule
+    EpisodesRoutingModule,
+    SharedModule
   ]
 })
 export class EpisodesModule { }

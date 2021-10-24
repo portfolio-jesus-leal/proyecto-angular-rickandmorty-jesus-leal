@@ -5,6 +5,7 @@ import { LocationsRoutingModule } from './locations-routing.module';
 import { LocationsComponent } from './locations.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
 import { LocationsGalleryComponent } from './locations-gallery/locations-gallery.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LocationsGalleryComponent } from './locations-gallery/locations-gallery
   ],
   imports: [
     CommonModule,
-    LocationsRoutingModule
+    LocationsRoutingModule,
+    SharedModule
   ]
 })
 export class LocationsModule { }

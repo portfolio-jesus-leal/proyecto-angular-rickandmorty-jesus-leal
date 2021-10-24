@@ -22,4 +22,11 @@ export class LocationsComponent implements OnInit {
     })
   }
 
+  pageChanged(pageNumber: any) {
+    //this.page = pageNumber;
+
+    console.log('Locations page ->', pageNumber);
+    //this.getCharacterInfo(this.page);
+  }
+
 }
