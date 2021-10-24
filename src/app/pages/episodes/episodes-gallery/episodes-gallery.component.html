@@ -1,12 +1,10 @@
 <div class="gallery__container">
-    <div class="gallery__title">Episodios</div>
+    <app-page-title [text]="'Episodios'"></app-page-title>
     <ng-container *ngIf="episodesList">
         <div class="gallery__card" *ngFor="let item of episodesList" [routerLink]="['/episodes',item.id]">
-
             <div class="gallery__name">{{item.name}}</div>
             <div>{{item.episode}}</div>
             <div><strong>Emisión:&nbsp;</strong>{{item.air_date}}</div>
-
         </div>
     </ng-container>
 </div>

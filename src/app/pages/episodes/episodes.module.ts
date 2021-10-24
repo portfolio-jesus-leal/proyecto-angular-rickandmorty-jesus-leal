@@ -7,12 +7,11 @@ import { EpisodeDetailsComponent } from './episode-details/episode-details.compo
 import { EpisodesGalleryComponent } from './episodes-gallery/episodes-gallery.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
   declarations: [
     EpisodesComponent,
     EpisodeDetailsComponent,
-    EpisodesGalleryComponent
+    EpisodesGalleryComponent,
   ],
   imports: [
     CommonModule,

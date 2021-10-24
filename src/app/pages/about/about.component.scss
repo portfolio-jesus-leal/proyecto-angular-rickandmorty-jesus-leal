@@ -12,10 +12,6 @@
     text-align: center;
     align-items: center;
     
-    & > h2 {
-        margin: 0;
-    }
-    
     &__link:hover {
         color: $link-text-color;
         text-shadow: $text-shadow-efect;

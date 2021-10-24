@@ -1,9 +1,12 @@
-<div>
-    <ul>
-        <li *ngFor="let item of locationsList" [routerLink]="['/locations',item.id]">
-            <h3>{{item.name | uppercase}}</h3>
-            <p>{{item.type}}</p>
-            <p>{{item.dimension}}</p>
-        </li>
-    </ul>
+<div class="gallery__container">
+    <app-page-title [text]="'Ubicaciones'"></app-page-title>
+    <ng-container *ngIf="locationsList">
+        <div class="gallery__card" *ngFor="let item of locationsList" [routerLink]="['/locations',item.id]">
+
+            <div class="gallery__name">{{item.name}}</div>
+            <div><strong>Tipo:&nbsp;</strong>{{item.type}}</div>
+            <div><strong>Dimensión:&nbsp;</strong>{{item.dimension}}</div>
+
+        </div>
+    </ng-container>
 </div>

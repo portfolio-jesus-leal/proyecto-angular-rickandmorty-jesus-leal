@@ -22,7 +22,6 @@ export class EpisodesComponent implements OnInit {
     this.page = Number(pageNumber);
     this.getEpisodesInfo(this.page);
     console.log('Episodes page ->', this.page);
-    //this.getCharacterInfo(this.page);
   }
   
   getEpisodesInfo(page: number) {

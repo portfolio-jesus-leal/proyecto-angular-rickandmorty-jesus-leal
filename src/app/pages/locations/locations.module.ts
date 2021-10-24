@@ -7,7 +7,6 @@ import { LocationDetailsComponent } from './location-details/location-details.co
 import { LocationsGalleryComponent } from './locations-gallery/locations-gallery.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
   declarations: [
     LocationsComponent,

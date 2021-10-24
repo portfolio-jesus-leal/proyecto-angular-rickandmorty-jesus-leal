@@ -1,0 +1,19 @@
+@import "fonts";
+@import "variables";
+//@import "responsive";
+//@import "animations";
+//@import "mixins";
+
+.page__title {
+  background-color: $background-color;
+  font-family: $font-family;
+  color: $font-color;
+  margin: 0 auto;
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $font-color;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+}

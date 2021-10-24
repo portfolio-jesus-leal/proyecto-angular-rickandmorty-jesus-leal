@@ -1,9 +1,10 @@
-<section>
-    <p>{{episodeDetails.id}}</p>
-    <h2>{{episodeDetails.name}}</h2>
-    <p>{{episodeDetails.air_date}}</p>
-    <p>{{episodeDetails.episode}}</p>
-    <p>{{episodeDetails.characters}}</p>
-    <p>{{episodeDetails.url}}</p>
-    <p>{{episodeDetails.created}}</p>
+<section class="episode">
+    <div class="episode__name">{{episodeDetails.name}}</div>
+    <div>{{episodeDetails.episode}}</div>
+    <div><strong>Emisión:&nbsp;</strong>{{episodeDetails.air_date | date: "dd-MMM-yyyy"}}</div>
+    <div><strong>Creación:&nbsp;</strong>{{episodeDetails.created | date: "dd-MMM-yyyy hh:mm z"}}</div>
+    <h2>Personajes del Episodio</h2>
+    <div class="episode__gallery" *ngFor="let urlCharacter of episodeDetails.characters">
+        <app-character-info-url [urlCharacter]="urlCharacter"></app-character-info-url>
+    </div>
 </section>

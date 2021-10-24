@@ -9,8 +9,9 @@ export class LocationsService {
 
   constructor(private http:HttpClient) { }
 
-  getLocations():Observable<any> {
-    return this.http.get(`https://rickandmortyapi.com/api/location`);
+  getLocations(page:number=1):Observable<any> {
+    console.log('getLocations->', page);
+    return this.http.get(`https://rickandmortyapi.com/api/location?page=${page}`);
   }
 
   getLocationById(id:any):Observable<any> {

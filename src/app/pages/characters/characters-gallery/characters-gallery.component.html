@@ -1,9 +1,8 @@
 <div class="gallery__container">
+    <app-page-title [text]="'Personajes'"></app-page-title>
     <ng-container *ngIf="characters.results">
         <div class="gallery__card" *ngFor="let item of characters.results">
-            <a routerLink='/characters/{{item.id}}'>
-                <app-character-card [character]="item"></app-character-card>
-            </a>
+            <app-character-card [character]="item"></app-character-card>
         </div>
     </ng-container>
 </div>
