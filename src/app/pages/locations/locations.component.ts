@@ -5,16 +5,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
-  styleUrls: ['./locations.component.scss']
+  styleUrls: ['./locations.component.scss'],
 })
 export class LocationsComponent implements OnInit {
+  private page: number = 1;
+  public locationsList: any = [];
+  public info: any = {};
+  private subscription!: Subscription;
 
-  private page:number = 1;
-  public locationsList:any = [];
-  public info:any = {};
-  private subscription!:Subscription;
-
-  constructor(private locationService:LocationsService) { }
+  constructor(private locationService: LocationsService) {}
 
   ngOnInit(): void {
     this.getLocationsInfo(this.page);
@@ -27,23 +26,30 @@ export class LocationsComponent implements OnInit {
   }
 
   getLocationsInfo(page: number) {
-    this.subscription = this.locationService.getLocations(this.page).subscribe(locations => {
-      this.locationsList = locations.results;
-      this.info = locations.info;
-      console.log('Locations ->', this.locationsList);
-      console.log('Info ->', this.info);
-    });
+    this.subscription = this.locationService
+      .getLocations(this.page)
+      .subscribe((locations) => {
+        this.locationsList = locations.results;
+        this.info = locations.info;
+        console.log('Locations ->', this.locationsList);
+        console.log('Info ->', this.info);
+      });
   }
 
-  searchFor(url:any) {
-    this.subscription = this.locationService.getLocationByUrl(url.locations).subscribe(locations => {
-      this.locationsList = locations.results;
-      this.info = locations.info;
-    });
+  searchFor(url: any) {
+    if (url.locations.length > 0) {
+      this.subscription = this.locationService
+        .getLocationByUrl(url.locations)
+        .subscribe((locations) => {
+          this.locationsList = locations.results;
+          this.info = locations.info;
+        });
+    } else {
+      this.getLocationsInfo(this.page);
+    }
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }

@@ -1,6 +1,6 @@
 @import "fonts";
 @import "variables";
-//@import "responsive";
+@import "responsive";
 //@import "animations";
 //@import "mixins";
 
@@ -16,4 +16,9 @@
   width: 90vw;
   display: flex;
   justify-content: center;
+
+  @include mobile {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+  }
 }

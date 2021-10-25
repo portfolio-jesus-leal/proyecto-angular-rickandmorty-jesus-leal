@@ -26,9 +26,13 @@
     }
     
     &__img-group {
-      height: 15vh;
+      height: 10vh;
       display: inline-flex;
       align-items: center;
+
+      @include mobile {
+        height: 5vh;
+      }
     }
 
     &__img {

@@ -36,10 +36,14 @@ $font-size: 3rem;
   &__slot {
     display: flex;
     flex-direction: column;
-    height: 75vh;
     margin: auto;
     justify-content: center;
     align-items: center;
+    padding: 10vh 0;
+
+    @include mobile {
+      padding: 0;
+    }
   }
 
   &__text {

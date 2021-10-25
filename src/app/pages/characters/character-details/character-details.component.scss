@@ -23,6 +23,11 @@
     font-weight: bolder;
     border-bottom: 1px solid $background-color;
     margin: 1rem auto;
+
+    @include mobile {
+      font-size: 1.5rem;
+      text-align: center;
+    }
   }
 
   &__title {
@@ -30,6 +35,10 @@
     font-weight: bolder;
     border-bottom: 1px solid $background-color;
     margin: 1rem auto;
+
+    @include mobile {
+      text-align: center;
+    }
   }
 
   &__img {
@@ -39,6 +48,10 @@
     &:hover {
       animation: shake 0.5s;
       animation-iteration-count: infinite;
+    }
+
+    @include mobile {
+      width: 80%;
     }
   }
 
@@ -52,11 +65,20 @@
   &__details {
     display: flex;
     flex-direction: row;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__slot {
     width: 50%;
     margin: auto;
+
+    @include mobile {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__link:hover {

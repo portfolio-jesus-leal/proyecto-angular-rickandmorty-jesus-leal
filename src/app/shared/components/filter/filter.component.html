@@ -5,6 +5,7 @@
             <input class="filter__input" type="text" name="filter" [(ngModel)]="textToFilter" (input)="filter()"
                 placeholder="Nombre a buscar">
             <div class="filter__btn" (click)="search()"><i class="fas fa-search"></i></div>
+            <div class="filter__clean-btn" (click)="clean()"><i class="far fa-times-circle"></i></div>
         </div>
     </div>
 </section>

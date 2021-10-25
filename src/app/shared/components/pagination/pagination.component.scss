@@ -16,22 +16,31 @@
     font-size: 1.2rem;
     color: $font-color;
     padding: 1rem 2rem;
-    width: 15vw;
     text-align: center;
     
     &:hover {
         animation                : shake 0.5s;
         animation-iteration-count: infinite;        
     }
+
+    @include mobile {
+      font-size: unset;
+      padding: 0.5rem;
+    }
   }
 
   &__btn {
     @include btn-custom;
+
+    @include mobile {
+      font-size: unset;
+    }
   }
 
   &__prev {
     width: 100px;
   }
+
   &__next {
     width: 100px;
   }

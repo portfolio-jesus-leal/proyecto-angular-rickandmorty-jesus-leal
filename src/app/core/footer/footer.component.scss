@@ -16,6 +16,10 @@
   align-items: center;
   flex-wrap: nowrap;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   &__text {
     font-family: $font-family;
     transition-duration: 0.3s;
