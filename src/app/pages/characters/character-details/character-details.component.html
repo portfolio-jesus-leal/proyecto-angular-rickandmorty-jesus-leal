@@ -1,24 +1,29 @@
-<section>
-    <ng-container *ngIf="details.image">
-        <img class="char__img" src="{{details.image}}" alt="{{details.name}}">
-        <p>{{details.image}}</p>
-        <div class="char__name">{{details.name}}</div>
-        <div class="char__row2">
-            <span>{{details.status}}</span>
-            <span> - </span>
-            <span>{{details.species}}</span>
-        </div>
-        <div class="char__row3">
-            <span>Origen: </span>
-            <span>{{details.origin.name}}</span>
-        </div>
-        <div class="char__row4">
-            <span>Ubicación: </span>
-            <span>{{details.location.name}}</span>
-        </div>
-        <div class="char__row5">
-            <span>Primer episodio: </span>
-            <span>{{details.episode[0]}}</span>
-        </div>
-    </ng-container>
+<section class="char">
+    <div class="char__container">
+        <ng-container *ngIf="details.image">
+            <div class="char__name">Personaje:&nbsp;{{details.name}}</div>
+            <div class="char__details">
+                <div class="char__slot">
+                    <img class="char__img" src="{{details.image}}" alt="{{details.name}}">
+                </div>
+                <div class="char__slot">
+                    <div><strong>Estado:&nbsp;</strong>{{details.status}}</div>
+                    <div><strong>Especie:&nbsp;</strong>{{details.species}}</div>
+                    <div><strong>Origen:&nbsp;</strong>
+                        <a class="char__link" routerLink={{routeOrigin}}>{{details.origin.name}}</a>
+                    </div>
+                    <div><strong>Ubicación:&nbsp;</strong>
+                        <a class="char__link" routerLink={{routeLocation}}>{{details.location.name}}</a>
+                    </div>
+                    <div><strong>Registro:&nbsp;</strong>{{details.created | date: "dd-MMM-yyyy"}}</div>
+                </div>
+            </div>
+            <div class="char__title">Episodios</div>
+            <div class="char__gallery">
+                <div class="char__episodes" *ngFor="let urlEpisode of details.episode">
+                    <app-episode-info-url [urlEpisode]="urlEpisode"></app-episode-info-url>
+                </div>
+            </div>
+        </ng-container>
+    </div>
 </section>

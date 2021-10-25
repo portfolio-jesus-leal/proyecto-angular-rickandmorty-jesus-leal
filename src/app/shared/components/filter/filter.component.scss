@@ -1,8 +1,8 @@
 @import "fonts";
 @import "variables";
-//@import "responsive";
+@import "responsive";
 //@import "animations";
-//@import "mixins";
+@import "mixins";
 
 // Custom Properties CSS
 .filter {
@@ -12,13 +12,17 @@
   padding: 1rem;
 
   &__container {
-    display: flex;
-    flex-direction: column;
     padding: 0.7rem 1rem;
-    width: 95%;
-    margin: auto;
     background-color: $filter-background-color;
     border-radius: $border-radius;
+  }
+
+  &__search {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
   }
 
   &__input {
@@ -26,31 +30,20 @@
     border-radius: $border-radius;
     width: 30%;
     padding-left: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 2;
+
+    @include mobile {
+      width: 50%;
+    }
   }
 
   &__label {
     font-weight: bold;
-    width: 15%;
+    margin: 0 0.5rem;
   }
 
-  &__search,
-  &__status,
-  &__gender {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-
-    & > p {
-      margin: 0.2rem 0.8rem 0 0;
-    }
-  }
-
-  &__option {
-
-    &:hover {
-      cursor: pointer;
-    }
+  &__btn {
+    @include btn-custom;
   }
 }

@@ -1,0 +1,8 @@
+<a routerLink='/episodes/{{episode.id}}'>
+    <div class="episode">
+        <div class="episode__name">{{episode.name}}</div>
+        <div>{{episode.episode}}</div>
+        <div><strong>Emisión:&nbsp;</strong>{{episode.air_date | date: "dd-MMM-yyyy"}}</div>
+        <div><strong>Registro:&nbsp;</strong>{{episode.created | date: "dd-MMM-yyyy"}}</div>
+    </div>
+</a>

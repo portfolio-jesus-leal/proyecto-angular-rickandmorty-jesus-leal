@@ -16,9 +16,7 @@ export class LocationDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe( param => {
       let idLocation = param.get('id');
-      console.log('idLocation->', idLocation);
       this.locationsService.getLocationById(idLocation).subscribe( location => {
-        console.log('location->', location);
         this.locationDetails = location;
       })
     })

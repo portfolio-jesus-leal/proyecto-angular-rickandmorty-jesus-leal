@@ -1,5 +1,5 @@
 <div class="gallery__container">
-    <app-page-title [text]="'Ubicaciones'"></app-page-title>
+    <app-page-title [text]="'Localizaciones'"></app-page-title>
     <ng-container *ngIf="locationsList">
         <div class="gallery__card" *ngFor="let item of locationsList" [routerLink]="['/locations',item.id]">
 

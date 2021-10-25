@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
 import { CharacterInfoUrlComponent } from './components/character-info-url/character-info-url.component';
+import { EpisodeInfoUrlComponent } from './components/episode-info-url/episode-info-url.component';
+import { EpisodeCardComponent } from './components/episode-card/episode-card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CharacterInfoUrlComponent } from './components/character-info-url/chara
     FilterComponent, 
     PageTitleComponent,
     CharacterCardComponent,
-    CharacterInfoUrlComponent
+    CharacterInfoUrlComponent,
+    EpisodeInfoUrlComponent,
+    EpisodeCardComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +30,8 @@ import { CharacterInfoUrlComponent } from './components/character-info-url/chara
     FilterComponent,
     PageTitleComponent,
     CharacterCardComponent,
-    CharacterInfoUrlComponent
+    CharacterInfoUrlComponent,
+    EpisodeInfoUrlComponent,
   ]
 })
 export class SharedModule { }

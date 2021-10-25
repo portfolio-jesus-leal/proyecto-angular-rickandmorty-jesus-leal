@@ -1,10 +1,14 @@
 <section class="location">
-    <div class="location__name">{{locationDetails.name}}</div>
-    <div><strong>Tipo:&nbsp;</strong>{{locationDetails.type"}}</div>
-    <div><strong>Dimensión:&nbsp;</strong>{{locationDetails.dimension"}}</div>
-    <div><strong>Creación:&nbsp;</strong>{{locationDetails.created | date: "dd-MMM-yyyy hh:mm z"}}</div>
-    <h2>Residentes</h2>
-    <div class="location__gallery" *ngFor="let urlCharacter of locationDetails.residents">
-        <app-character-info-url [urlCharacter]="urlCharacter"></app-character-info-url>
+    <div class="location__container">
+        <div class="location__name">Localización:&nbsp;{{locationDetails.name}}</div>
+        <div><strong>Tipo:&nbsp;</strong>{{locationDetails.type}}</div>
+        <div><strong>Dimensión:&nbsp;</strong>{{locationDetails.dimension}}</div>
+        <div><strong>Creación:&nbsp;</strong>{{locationDetails.created | date: "dd-MMM-yyyy hh:mm z"}}</div>
+        <div class="location__title">Residentes</div>
+        <div class="location__gallery">
+            <div class="location__card" *ngFor="let urlCharacter of locationDetails.residents">
+                <app-character-info-url [urlCharacter]="urlCharacter"></app-character-info-url>
+            </div>
+        </div>
     </div>
 </section>

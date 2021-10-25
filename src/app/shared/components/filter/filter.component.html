@@ -4,24 +4,7 @@
             <label class="filter__label" for="filter">Buscar:</label>
             <input class="filter__input" type="text" name="filter" [(ngModel)]="textToFilter" (input)="filter()"
                 placeholder="Nombre a buscar">
-        </div>
-        <div class="filter__status">
-            <p class="filter__label">Estado:</p>
-            <p class="filter__option">Vivo</p>
-            <p> | </p>
-            <p class="filter__option">Muerto</p>
-            <p> | </p>
-            <p class="filter__option">Desconocido</p>
-        </div>
-        <div class="filter__gender">
-            <p class="filter__label">Género:</p>
-            <p class="filter__option">Masculino</p>
-            <p> | </p>
-            <p class="filter__option">Femenino</p>
-            <p> | </p>
-            <p class="filter__option">Sin género</p>
-            <p> | </p>
-            <p class="filter__option">Desconocido</p>
+            <div class="filter__btn" (click)="search()"><i class="fas fa-search"></i></div>
         </div>
     </div>
 </section>

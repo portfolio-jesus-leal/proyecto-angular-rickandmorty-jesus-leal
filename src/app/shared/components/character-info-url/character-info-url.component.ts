@@ -1,5 +1,6 @@
 import { CharactersService } from './../../services/characters.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-character-info-url',
@@ -8,17 +9,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CharacterInfoUrlComponent implements OnInit {
 
-  @Input() urlCharacter: any = {};
+  @Input() urlCharacter:any = {};
   public character:any = {};
+  private subscription!:Subscription;
 
   constructor(private charactersService:CharactersService) { }
 
   ngOnInit(): void {
-    this.charactersService
+    this.subscription = this.charactersService
       .getCharacterByUrl(this.urlCharacter)
       .subscribe((character) => {
         this.character = character;
-        console.log('Character Url ->', this.character);
       });
+  }
+
+  ngOnDestroy():void {
+    this.subscription.unsubscribe();
   }
 }

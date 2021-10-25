@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { CharactersService } from './../../shared/services/characters.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,6 +11,7 @@ export class CharactersComponent implements OnInit {
 
   private page:number = 1;
   public characters:any = {}
+  private subscription!:Subscription;
 
   constructor(private charactersService:CharactersService) { }
 
@@ -25,6 +27,14 @@ export class CharactersComponent implements OnInit {
   }
   
   getCharactersInfo(page: number) {
-    this.charactersService.getCharacters(page).subscribe(characters => this.characters = characters);
+    this.subscription = this.charactersService.getCharacters(page).subscribe(characters => this.characters = characters);
+  }
+
+  searchFor(url:any) {
+    this.subscription = this.charactersService.getCharacterByUrl(url.characters).subscribe(characters => this.characters = characters);
+  }
+
+  ngOnDestroy():void {
+    this.subscription.unsubscribe();
   }
 }

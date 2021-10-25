@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { LocationsService } from './../../shared/services/locations.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,6 +12,7 @@ export class LocationsComponent implements OnInit {
   private page:number = 1;
   public locationsList:any = [];
   public info:any = {};
+  private subscription!:Subscription;
 
   constructor(private locationService:LocationsService) { }
 
@@ -25,12 +27,23 @@ export class LocationsComponent implements OnInit {
   }
 
   getLocationsInfo(page: number) {
-    this.locationService.getLocations(this.page).subscribe(locations => {
+    this.subscription = this.locationService.getLocations(this.page).subscribe(locations => {
       this.locationsList = locations.results;
       this.info = locations.info;
       console.log('Locations ->', this.locationsList);
       console.log('Info ->', this.info);
     });
+  }
+
+  searchFor(url:any) {
+    this.subscription = this.locationService.getLocationByUrl(url.locations).subscribe(locations => {
+      this.locationsList = locations.results;
+      this.info = locations.info;
+    });
+  }
+
+  ngOnDestroy():void {
+    this.subscription.unsubscribe();
   }
 
 }

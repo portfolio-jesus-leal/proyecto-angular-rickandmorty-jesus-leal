@@ -1,0 +1,63 @@
+@import "fonts";
+@import "variables";
+@import "responsive";
+@import "animations";
+//@import "mixins";
+
+$font-size: 3rem;
+
+.home {
+  display: flex;
+  flex-direction: row;
+  background-color: $home-background-color;
+  color: $home-font-color;
+  font-family: $font-family;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 40%;
+    margin: auto;
+
+    @include mobile {
+      width: 50%;
+    }
+
+    &:hover {
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__slot {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: $font-size;
+  }
+
+  &__links {
+    display: contents;
+  }
+
+  &__link {
+    margin: 0.5rem;
+    font-size: $font-size;
+    font-weight: bold;
+
+    &:hover {
+      color: $link-text-color;
+      text-shadow: $text-shadow-efect;
+    }
+  }
+}

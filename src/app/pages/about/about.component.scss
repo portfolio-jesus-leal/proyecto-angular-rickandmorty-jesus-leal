@@ -12,49 +12,31 @@
     text-align: center;
     align-items: center;
     
+    &__container {
+      padding: 0 10vw;
+
+      &>p {
+        margin: 0.5em 0;
+      }
+    }
+    
     &__link:hover {
         color: $link-text-color;
         text-shadow: $text-shadow-efect;
     }
     
+    &__img-group {
+      height: 15vh;
+      display: inline-flex;
+      align-items: center;
+    }
+
     &__img {
-        //max-width: 80%;
-        width: fit-content;
+        height: 100%;
         
         &:hover {
           animation: shake 0.5s;
           animation-iteration-count: infinite;
         }
     }
-}
-
-
-.card-flex-center {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  @include mobile {
-    flex-direction: column;
-  }
-}
-
-.arrow-up {
-  position: fixed;
-  left: 10vw;
-  bottom: 10vw;
-  width: 5vw;
-  max-width: 50px;
-  position: sticky;
-  margin-top: 10px;
-
-  @include mobile {
-    display: none;
-  }
-
-  &:hover {
-    animation: updown 0.5s;
-    animation-iteration-count: infinite;
-  }
 }
