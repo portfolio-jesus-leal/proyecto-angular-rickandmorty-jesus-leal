@@ -1,4 +1,7 @@
 # RickAndMortyProject
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b4fdf09b-50e4-445e-83ca-1bb85aa1b8fa/deploy-status)](https://app.netlify.com/sites/jesusleal-rickandmorty/deploys)
+
+* You can visit this page at: [jesusleal-rickandmorty.netlify.app](jesusleal-rickandmorty.netlify.app)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
